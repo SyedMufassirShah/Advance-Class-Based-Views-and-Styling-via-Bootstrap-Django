@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<div>
+  <h1 class="text-success">Reminders List:</h1>
+  <div class="text-start card d-flex flex-column ">
+    <ul>
+      {% for reminder in reminders %}
+      <li>
+        <a class="text-decoration-none" href="{% url 'Reminder_Details' pk=reminder.pk %}"
+          >{{ reminder.title }}</a
+        >
+      </li>
+      {% empty %}
+      <li>No Reminder Found!</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

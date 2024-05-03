@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<div class="d-flex flex-column">
+  <h1 class="text-success">Here are all the Notes:</h1><br /><br />
+  <div class="text-start card ml-5 d-flex flex-column ">
+    <ul>
+      {% for note in notes %}
+      <li>
+        <a class="text-primary text-decoration-none note-li-a" href="{% url 'note_detail' pk=note.pk %}"
+          >{{ note.title }}</a
+        >
+      </li>
+      {% empty %}
+      <li class="no-note">No Notes Available.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

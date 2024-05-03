@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome to Bakhti Rehman's Website!</h1>
+    <p>Guys today is {{today}}</p>
+    <a href="{% url 'notes.list' %}" class="btn btn-primary">Check Out Our Notes</a>
+{% endblock  %}
